@@ -8,12 +8,29 @@ using static Authorization;
 /// </summary>
 internal class Application
 {
+    
+    
     private readonly Dictionary<User, (DateTime timestamp, LinkedList<User> onlineFriends)>
-        db = new Dictionary<User, (DateTime, LinkedList<User>)>();
+        _db = new Dictionary<User, (DateTime, LinkedList<User>)>();
+
+    private void UpdateAsync()
+    {
+        // dump there
+    }
+
+    private void DumpAsync()
+    {
+        throw new NotImplementedException();
+    }
+
+    private void Analyze(User user)
+    {
+        
+    }
 
     private static void Main(string[] user)
     {
         var api = Login(user);
-        
     }
+    
 }
