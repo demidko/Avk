@@ -13,10 +13,7 @@
 * Снять с учета  `rm [ссылка]`
 ### TODO
 * Алгоритм:  
-  ```
-   map:
-     friend -> linked list of { 
-       timestamp, list of online friends 
-     }
-   ```
+```
+map: friend -> linked list of { timestamp, friends online }
+```
 * PWA
