@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using VkNet.Model;
 using static Authorization;
 
-/// <summary>
-/// Точка входа описывает логику приложения на высоком уровне
-/// </summary>
 internal class Application
 {
     
