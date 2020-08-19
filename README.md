@@ -12,8 +12,8 @@
 * Поставить нового человека на учет  `add [ссылка]`
 * Снять с учета  `rm [ссылка]`
 ### TODO
-* Алгоритм:  
+* Алгоритм работы 
   ```
-  map: friend -> linked list of { timestamp, friends online }
+    map: friend -> linked list of { timestamp, friends online }
   ```
 * PWA
