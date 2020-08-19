@@ -8,7 +8,8 @@ internal static class Application
     private static void Main(string[] user)
     {
         var api = Login(user);
-     
-        api.Friends.Get
+
+        var t = api.Friends.Get()[0]!;
+        
     }
 }
