@@ -5,8 +5,6 @@ using static Authorization;
 
 internal class Application
 {
-    
-    
     private readonly Dictionary<User, (DateTime timestamp, LinkedList<User> onlineFriends)>
         _db = new Dictionary<User, (DateTime, LinkedList<User>)>();
 
