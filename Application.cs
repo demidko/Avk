@@ -27,17 +27,12 @@ internal class Application
         _db = Exists(DbPath)
             ? Deserialize<Dictionary<User, LinkedList<(DateTime, List<User>)>>>(ReadAllBytes(DbPath))
             : new Dictionary<User, LinkedList<(DateTime, List<User>)>>();
-        FromMinutes(1).Schedule(() => WriteAllBytesAsync(".db", SerializeToUtf8Bytes(_db)));
+        FromMinutes(1).Schedule(async () => await WriteAllBytesAsync(".db", SerializeToUtf8Bytes(_db)));
     }
 
     private void Analyze(string link)
     {
     }
-
-    private void StopAnalysis(string link)
-    {
-    }
-
 
     private static void Main(string[] authorizationData)
     {

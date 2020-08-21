@@ -21,4 +21,9 @@
     <PackageReference Include="VkNet" Version="1.52.0" />
     <PackageReference Include="VkNet.AudioBypassService" Version="1.6.0" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="README.md" />
+    <None Remove=".authorization" />
+    <None Remove=".gitignore" />
+  </ItemGroup>
 </Project>
