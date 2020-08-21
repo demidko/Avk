@@ -18,19 +18,15 @@ using Timer = System.Timers.Timer;
 internal class Application
 {
     private const string DbPath = ".db";
-
-    private readonly Dictionary<User, LinkedList<(DateTime timestamp, List<User> onlineFriends)>>
-        _db = new Dictionary<User, LinkedList<(DateTime, List<User>)>>();
-
+    private readonly Dictionary<User, LinkedList<(DateTime timestamp, List<User> onlineFriends)>> _db;
     private readonly VkApi _api;
 
-    private Application(VkApi api)
+    private Application(string[] authorizationData)
     {
-        _api = api;
-        if (Exists(DbPath))
-        {
-            _db = Deserialize<Dictionary<User, LinkedList<(DateTime, List<User>)>>>(ReadAllBytes(DbPath));
-        }
+        _api = LoginApi(authorizationData);
+        _db = Exists(DbPath)
+            ? Deserialize<Dictionary<User, LinkedList<(DateTime, List<User>)>>>(ReadAllBytes(DbPath))
+            : new Dictionary<User, LinkedList<(DateTime, List<User>)>>();
         FromMinutes(1).Schedule(() => WriteAllBytesAsync(".db", SerializeToUtf8Bytes(_db)));
     }
 
@@ -38,12 +34,15 @@ internal class Application
     {
     }
 
-    private void StopAnalysis
-
-
-    private static void Main(string[] user)
+    private void StopAnalysis(string link)
     {
-        var application = new Application(Login(user));
+    }
+
+
+    private static void Main(string[] authorizationData)
+    {
+        var application = new Application(authorizationData);
+
         // цикл обработки команд
     }
 }

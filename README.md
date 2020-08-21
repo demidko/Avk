@@ -9,5 +9,6 @@
 * Вывести список анализируемых людей в фоновом режиме (по умолчанию все друзья)  `analytic list`
 * Прекратить анализировать человека  `stop analysis [ссылка]`
 ### TODO
-* WebAssembly PWA
+* Blazor
+* Azure Functions
 
