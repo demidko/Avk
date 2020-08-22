@@ -17,14 +17,14 @@ internal static class Application
 {
     private static void Main(string[] args)
     {
-        var analytic = new Analytic(LoginApi(args));
+        var analytic = new Analyst(LoginApi(args));
         for (var command = ReadCommand();; command = ReadCommand())
         {
             analytic.Execute(command);
         }
     }
 
-    private static void Execute(this Analytic analytic, string command)
+    private static void Execute(this Analyst analyst, string command)
     {
         
     }
