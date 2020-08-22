@@ -17,11 +17,13 @@ internal static class Application
 {
     private static void Main(string[] args)
     {
-        var analytic = new Analyst(LoginApi(args));
+        var oo = new Dictionary<int, int>();
+        oo[7].PrintImportantMessage();
+        /*var analytic = new Analyst(LoginApi(args));
         for (var command = ReadCommand();; command = ReadCommand())
         {
             analytic.Execute(command);
-        }
+        }*/
     }
 
     private static void Execute(this Analyst analyst, string command)

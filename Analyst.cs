@@ -21,14 +21,11 @@ internal class Analyst
     {
         _api = api;
         _db = new Database("friends.json", api);
-        FromMinutes(1).Schedule(() => { });
+        FromMinutes(1).Schedule(Snapshot);
     }
 
-    private void UpdateDb()
+    private void Snapshot()
     {
-        foreach (var user in _db.GetUsers())
-        {
-            
-        }
+        
     }
 }
