@@ -28,7 +28,7 @@ internal static class Authorization
     /// </summary>
     /// <param name="args">логин, пароль</param>
     /// <returns>VK Api</returns>
-    internal static VkApi LoginApi(string[] args)
+    public static VkApi LoginApi(string[] args)
     {
         var services = new ServiceCollection();
         services.AddAudioBypass();
@@ -41,7 +41,7 @@ internal static class Authorization
             Password = password,
             Settings = All
         });
-        $"Login as vk.com/id{api.UserId}".Println(DarkBlue);
+        $"Login as vk.com/id{api.UserId}".PrintImportantMessage();
         return api;
     }
 
