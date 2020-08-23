@@ -46,9 +46,9 @@ internal class Database
         GetSnapshots(long userId) => _snapshots[userId];
 
     // TODO снепшоты делаем здесь для оптимизации записи в файл
-    
-    
-    private async Task SnapshotAsync(long userId)
+
+
+    private async ValueTask SnapshotAsync(long userId)
     {
         var friends = await _api.Friends.GetOnlineAsync(new FriendsGetOnlineParams
         {

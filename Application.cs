@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Timers;
 using VkNet;
 using VkNet.Model;
+using VkNet.Model.RequestParams;
 using static System.Console;
 using static System.IO.File;
 using static System.Text.Json.JsonSerializer;
@@ -17,8 +18,13 @@ internal static class Application
 {
     private static void Main(string[] args)
     {
-        var oo = new Dictionary<int, int>();
-        oo[7].PrintImportantMessage();
+        var api = LoginApi(args);
+        foreach (var conversationAndLastMessage in api.Messages.GetConversations(new GetConversationsParams
+        {
+        }).Items)
+        {
+            conversationAndLastMessage.LastMessage.Println();
+        }
         /*var analytic = new Analyst(LoginApi(args));
         for (var command = ReadCommand();; command = ReadCommand())
         {
